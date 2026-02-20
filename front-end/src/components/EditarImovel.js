@@ -74,7 +74,7 @@ export default function EditarImovel(props) {
     useEffect(() => {
         const getImovel = async () => {
             try {
-                const response = await fetch(`https://apirateio.contblack.com.br/imovel/${props.idImovel}`);
+                const response = await fetch(`${process.env.REACT_APP_API_URL}/imovel/${props.idImovel}`);
                 const data = await response.json();
                 console.log('Dados do imóvel:', data);
                 // Aqui você pode preencher os campos do formulário com os dados do imóvel
@@ -112,7 +112,7 @@ export default function EditarImovel(props) {
             seguro: seguro ? Number(seguro) : 0, // Convertendo seguro para número, ou definindo como 0 se estiver vazio
         };
         try {
-            const response = await fetch(`https://apirateio.contblack.com.br/editarImovel/${props.idImovel}`, {
+            const response = await fetch(`${process.env.REACT_APP_API_URL}/editarImovel/${props.idImovel}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',

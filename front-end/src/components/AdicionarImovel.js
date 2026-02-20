@@ -86,7 +86,7 @@ export default function AdicionarImovel(props) {
         console.log('Novo imóvel a ser salvo:', novoImovel);
 
         // Enviar os dados para o backend
-        await fetch('https://apirateio.contblack.com.br/cadastrarImovel', {
+        await fetch(`${process.env.REACT_APP_API_URL}/cadastrarImovel`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
