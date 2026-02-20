@@ -48,7 +48,7 @@ export default function App() {
 	useEffect(() => {
 		const getImoveis = async () => {
 			try {
-				const response = await fetch('http://localhost:3001/listarImoveis');
+				const response = await fetch('https://apirateio.contblack.com.br/listarImoveis');
 				const data = await response.json();
 				console.log('Imóveis do backend:', data);
 				setImoveis(data);
@@ -63,7 +63,7 @@ export default function App() {
 	const handleSendEmailWithDiscount = async (id) => {
 		try {
 			setLoading(true);
-			const response = await fetch(`http://localhost:3001/enviarEmailComDesconto/${id}`, {
+			const response = await fetch(`https://apirateio.contblack.com.br/enviarEmailComDesconto/${id}`, {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json',
@@ -87,7 +87,7 @@ export default function App() {
 	const handleSendEmailWithoutDiscount = async (id) => {
 		try {
 			setLoading(true);
-			const response = await fetch(`http://localhost:3001/enviarEmailSemDesconto/${id}`, {
+			const response = await fetch(`https://apirateio.contblack.com.br/enviarEmailSemDesconto/${id}`, {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json',

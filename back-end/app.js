@@ -11,13 +11,16 @@ const Imoveis = require('./models/Imoveis.js'); // Importa o modelo de imóveis
 app.use(express.json());
 
 const corsOptions = {
-	origin: 'http://localhost:3000', // Permite apenas requisições do frontend local
+	origin: 'https://app-rateio.vercel.app', // Permite apenas requisições do frontend local
 	methods: ['GET', 'POST', 'PUT'], // Permite os métodos GET, POST e PUT
 	allowedHeaders: ['Content-Type', 'Authorization'], // Permite cabeçalhos específicos
 };
 
 app.use(cors(corsOptions));
 
+app.get('/', (req, res) => {
+	res.send('up');
+});
 
 app.post('/cadastrarImovel', (req, res) => {
 

@@ -86,7 +86,7 @@ export default function AdicionarImovel(props) {
         console.log('Novo imóvel a ser salvo:', novoImovel);
 
         // Enviar os dados para o backend
-        await fetch('http://localhost:3001/cadastrarImovel', {
+        await fetch('https://apirateio.contblack.com.br/cadastrarImovel', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
